@@ -2,4 +2,5 @@ header#banner.hero-unit
   .container
     h1 Graphics Area
     p.lead Visualize your SVG's here
-    div.backdrop(ng-include="'assets/images/sun_2.svg'")
+    div.backdrop(id='svg', ng-include="'assets/images/sun_2.svg'")
+button.btn-default(type='button', ng-click='graphics.draw()') Draw Something;

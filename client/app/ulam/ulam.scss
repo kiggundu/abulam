@@ -1,0 +1,367 @@
+.thing-form {
+  margin: 20px 0;
+}
+
+#banner {
+  border-bottom: none;
+  margin-top: -20px;
+}
+
+#banner h1 {
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.hero-unit {
+  position: relative;
+  padding: 30px 15px;
+  color: #F5F5F5;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background: #4393B9;
+}
+
+.navbar-text {
+  margin-left: 15px;
+}
+
+.backdrop
+{
+  transition:all 5s ease;
+  background-color:#AECAF8;
+}
+.backdrop.Sunny
+{
+  background-color:#AECAF8;
+}
+.backdrop.Cloudy
+{
+  background-color:rgb(150, 179, 196);
+}
+.backdrop.Rainy
+{
+  background-color:#7E8DA6;
+}
+.backdrop #Cloudy_frame,
+  //.backdrop #Sunny_frame,
+.backdrop #Rainy_frame
+{
+  opacity:0;
+  transition:all 5s ease;
+}
+.backdrop.Sunny #Sunny_frame
+{
+  opacity:1;
+  transition:all 5s ease;
+}
+.backdrop.Cloudy #Cloudy_frame
+{
+  opacity:1;
+  transition:all 5s ease;
+}
+.backdrop.Rainy #Rainy_frame
+{
+  opacity:1;
+  transition:all 5s ease;
+}
+#Sun,
+path[id*="T_"]
+{
+  transform: scale(1, 1);
+  transform: translateY(0px);
+  animation:thesun 5s linear infinite;
+  -moz-animation:thesun 5s linear infinite; /* Firefox */
+  -webkit-animation:thesun 5s linear infinite; /* Safari and Chrome */
+  -o-animation:thesun 5s linear infinite; /* Opera */
+}
+@-webkit-keyframes thesun
+{
+  0%   {
+    transform: scale(1, 1);
+  }
+  50%  {
+    transform: scale(1.01, 1.01);
+  }
+  100%   {
+    transform: scale(1, 1);
+  }
+}
+@-moz-keyframes thesun
+{
+  0%   {
+    transform: scale(1, 1);
+  }
+  50%  {
+    transform: scale(1.01, 1.01);
+  }
+  100%   {
+    transform: scale(1, 1);
+  }
+}
+#Cloud_1
+{
+  animation:fastcloud 40s linear infinite;
+  -moz-animation:fastcloud 40s linear infinite; /* Firefox */
+  -webkit-animation:fastcloud 40s linear infinite; /* Safari and Chrome */
+  -o-animation:fastcloud 40s linear infinite; /* Opera */
+}
+@-webkit-keyframes fastcloud
+{
+  0%   {
+    transform: translateX(-400px) scale(1);
+  }
+  50%  {
+    transform: translateX(0px) scale(1);
+  }
+  100%   {
+    transform: translateX(400px) scale(1);
+  }
+}
+@-moz-keyframes fastcloud
+{
+  0%   {
+    transform: translateX(-400px) scale(1);
+  }
+  50%  {
+    transform: translateX(0px) scale(1);
+  }
+  100%   {
+    transform: translateX(400px) scale(1);
+  }
+}
+#Cloud_2
+{
+  animation:mediumcloud 60s linear infinite;
+  -moz-animation:mediumcloud 60s linear infinite; /* Firefox */
+  -webkit-animation:mediumcloud 60s linear infinite; /* Safari and Chrome */
+  -o-animation:mediumcloud 60s linear infinite; /* Opera */
+}
+@-webkit-keyframes mediumcloud
+{
+  0%   {
+    transform: translate(-400px, -100px) scale(.6);
+  }
+  50%  {
+    transform: translate(0px, -100px) scale(.6);
+  }
+  100%   {
+    transform: translate(400px, -100px) scale(.6);
+  }
+}
+@-moz-keyframes mediumcloud
+{
+  0%   {
+    transform: translate(-400px, -100px) scale(.6);
+  }
+  50%  {
+    transform: translate(0px, -100px) scale(.6);
+  }
+  100%   {
+    transform: translate(400px, -100px) scale(.6);
+  }
+}
+#Cloud_3
+{
+  animation:veryslowcloud 90s linear infinite;
+  -moz-animation:veryslowcloud 90s linear infinite; /* Firefox */
+  -webkit-animation:veryslowcloud 90s linear infinite; /* Safari and Chrome */
+  -o-animation:veryslowcloud 90s linear infinite; /* Opera */
+}
+@-webkit-keyframes veryslowcloud
+{
+  0%   {
+    transform: translate(-400px, -100px) scale(.4);
+  }
+  50%  {
+    transform: translate(0px, -100px) scale(.4);
+  }
+  100%   {
+    transform: translate(400px, -100px) scale(.4);
+  }
+}
+@-moz-keyframes veryslowcloud
+{
+  0%   {
+    transform: translate(-400px, -100px) scale(.4);
+  }
+  50%  {
+    transform: translate(0px, -100px) scale(.4);
+  }
+  100%   {
+    transform: translate(400px, -100px) scale(.4);
+  }
+}
+#CCloud_2
+{
+  animation:cloudycloud1 60s linear infinite;
+  -moz-animation:cloudycloud1 60s linear infinite; /* Firefox */
+  -webkit-animation:cloudycloud1 60s linear infinite; /* Safari and Chrome */
+  -o-animation:cloudycloud1 60s linear infinite; /* Opera */
+}
+@-webkit-keyframes cloudycloud1
+{
+  0%   {
+    transform: translate(-260px, 0px) scale(.4);
+  }
+  50%  {
+    transform: translate(0px, 0px) scale(.4);
+  }
+  100%   {
+    transform: translate(260px, 0px) scale(.4);
+  }
+}
+#CCloud_3
+{
+  animation:cloudycloud2 100s linear infinite;
+  -moz-animation:cloudycloud2 100s linear infinite; /* Firefox */
+  -webkit-animation:cloudycloud2 100s linear infinite; /* Safari and Chrome */
+  -o-animation:cloudycloud2 100s linear infinite; /* Opera */
+}
+@-webkit-keyframes cloudycloud2
+{
+  0%   {
+    transform: translate(-260px, 0px) scale(.2);
+  }
+  50%  {
+    transform: translate(0px, 0px) scale(.2);
+  }
+  100%   {
+    transform: translate(260px, 0px) scale(.2);
+  }
+}
+@-moz-keyframes cloudycloud2
+{
+  0%   {
+    transform: translate(-260px, 0px) scale(.2);
+  }
+  50%  {
+    transform: translate(0px, 0px) scale(.2);
+  }
+  100%   {
+    transform: translate(260px, 0px) scale(.2);
+  }
+}
+#Drop_1
+{
+  animation:raindrop .5s linear infinite;
+  -moz-animation:raindrop .5s linear infinite; /* Firefox */
+  -webkit-animation:raindrop .5s linear infinite; /* Safari and Chrome */
+  -o-animation:raindrop .5s linear infinite; /* Opera */
+}
+#Drop_2
+{
+  animation:raindrop .2s linear infinite;
+  -moz-animation:raindrop .2s linear infinite; /* Firefox */
+  -webkit-animation:raindrop .2s linear infinite; /* Safari and Chrome */
+  -o-animation:raindrop .2s linear infinite; /* Opera */
+}
+#Drop_3
+{
+  animation:raindrop .7s linear infinite;
+  -moz-animation:raindrop .7s linear infinite; /* Firefox */
+  -webkit-animation:raindrop .7s linear infinite; /* Safari and Chrome */
+  -o-animation:raindrop .7s linear infinite; /* Opera */
+}
+#Drop_4
+{
+  animation:raindrop .3s linear infinite;
+  -moz-animation:raindrop .3s linear infinite; /* Firefox */
+  -webkit-animation:raindrop .3s linear infinite; /* Safari and Chrome */
+  -o-animation:raindrop .3s linear infinite; /* Opera */
+}
+#Drop_5
+{
+  animation:raindrop .6s linear infinite;
+  -moz-animation:raindrop .6s linear infinite; /* Firefox */
+  -webkit-animation:raindrop .6s linear infinite; /* Safari and Chrome */
+  -o-animation:raindrop .6s linear infinite; /* Opera */
+}
+#Drop_6
+{
+  animation:raindrop .9s linear infinite;
+  -moz-animation:raindrop .9s linear infinite; /* Firefox */
+  -webkit-animation:raindrop .9s linear infinite; /* Safari and Chrome */
+  -o-animation:raindrop .9s linear infinite; /* Opera */
+}
+#Drop_7
+{
+  animation:raindrop .2s linear infinite;
+  -moz-animation:raindrop .2s linear infinite; /* Firefox */
+  -webkit-animation:raindrop .2s linear infinite; /* Safari and Chrome */
+  -o-animation:raindrop .2s linear infinite; /* Opera */
+}
+#Drop_2
+{
+  animation:raindrop .54s linear infinite;
+  -moz-animation:raindrop .54s linear infinite; /* Firefox */
+  -webkit-animation:raindrop .54s linear infinite; /* Safari and Chrome */
+  -o-animation:raindrop .54s linear infinite; /* Opera */
+}
+#Drop_8
+{
+  animation:raindrop .72s linear infinite;
+  -moz-animation:raindrop .72s linear infinite; /* Firefox */
+  -webkit-animation:raindrop .72s linear infinite; /* Safari and Chrome */
+  -o-animation:raindrop .72s linear infinite; /* Opera */
+}
+#Drop_9
+{
+  animation:raindrop 1s linear infinite;
+  -moz-animation:raindrop 1s linear infinite; /* Firefox */
+  -webkit-animation:raindrop 1s linear infinite; /* Safari and Chrome */
+  -o-animation:raindrop 1s linear infinite; /* Opera */
+}
+#Drop_10
+{
+  animation:raindrop .55s linear infinite;
+  -moz-animation:raindrop .55s linear infinite; /* Firefox */
+  -webkit-animation:raindrop .55s linear infinite; /* Safari and Chrome */
+  -o-animation:raindrop .55s linear infinite; /* Opera */
+}
+#Drop_11
+{
+  animation:raindrop .43s linear infinite;
+  -moz-animation:raindrop .43s linear infinite; /* Firefox */
+  -webkit-animation:raindrop .43s linear infinite; /* Safari and Chrome */
+  -o-animation:raindrop .43s linear infinite; /* Opera */
+}
+#Drop_12
+{
+  animation:raindrop .25s linear infinite;
+  -moz-animation:raindrop .25s linear infinite; /* Firefox */
+  -webkit-animation:raindrop .25s linear infinite; /* Safari and Chrome */
+  -o-animation:raindrop .25s linear infinite; /* Opera */
+}
+#Drop_13
+{
+  animation:raindrop .6s linear infinite;
+  -moz-animation:raindrop .6s linear infinite; /* Firefox */
+  -webkit-animation:raindrop .6s linear infinite; /* Safari and Chrome */
+  -o-animation:raindrop .6s linear infinite; /* Opera */
+}
+#Drop_14
+{
+  animation:raindrop .25s linear infinite;
+  -moz-animation:raindrop .25s linear infinite; /* Firefox */
+  -webkit-animation:raindrop .25s linear infinite; /* Safari and Chrome */
+  -o-animation:raindrop .25s linear infinite; /* Opera */
+}
+@-webkit-keyframes raindrop
+{
+  0%   {
+    transform: scaleY(.5);
+  }
+  100%   {
+    transform: scaleY(1);
+  }
+}
+@-moz-keyframes raindrop
+{
+  0%   {
+    transform: scaleY(.5);
+  }
+  100%   {
+    transform: scaleY(1);
+  }
+}

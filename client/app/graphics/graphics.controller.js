@@ -30,7 +30,7 @@ class GraphicsController {
   }
 
   draw(){
-    var s = Snap("#svg");
+    var s = Snap("#svg2");
     s.circle(150, 150, 100);
   }
 }

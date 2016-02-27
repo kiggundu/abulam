@@ -16,4 +16,11 @@ angular.module('abulamApp')
         controller: 'GraphicsController',
         controllerAs: 'graphics'
       });
+    $stateProvider
+      .state('ulam', {
+        url: '/ulam',
+        templateUrl: 'app/ulam/ulam.html',
+        controller: 'UlamController',
+        controllerAs: 'ulam'
+      });
   });
