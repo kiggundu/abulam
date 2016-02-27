@@ -9,4 +9,11 @@ angular.module('abulamApp')
         controller: 'MainController',
         controllerAs: 'main'
       });
+    $stateProvider
+      .state('graphics', {
+        url: '/graphics',
+        templateUrl: 'app/graphics/graphics.html',
+        controller: 'GraphicsController',
+        controllerAs: 'graphics'
+      });
   });
