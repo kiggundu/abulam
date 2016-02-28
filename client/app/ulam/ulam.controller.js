@@ -9,7 +9,7 @@
 
     draw(){
       var s = Snap("#svgempty");
-      s.circle(150, 150, 100);
+      s.rect(500, 500, 200, 200);
     }
   }
 
