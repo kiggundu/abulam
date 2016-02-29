@@ -2,6 +2,7 @@
 
 angular.module('abulamApp', [
   'abulamApp.auth',
+  'abulamApp.primes',
   'abulamApp.admin',
   'abulamApp.constants',
   'ngCookies',

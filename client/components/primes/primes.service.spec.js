@@ -3,7 +3,7 @@ describe('PrimesService', function(){
   var primesService;
 
   beforeEach(function(){
-    module("abulum.primes");
+    module("abulumApp.primes");
 
     inject(function (PrimesService, $q) {
       primesService = PrimesService;
@@ -11,7 +11,7 @@ describe('PrimesService', function(){
   })
 
   it('gets a list of primes', function(done){
-    primesService.getPrimes().then(function(primes){
+    primesService.get().then(function(primes){
       expect(primes).toEqual("");
       done();
     })

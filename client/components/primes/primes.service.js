@@ -1,27 +1,23 @@
-(function(module){
+'use strict';
 
-  function PrimesService($http, $q){
-    return {
-      getPrimes: function(){
-        var deferred = $q.defer();
-        console.log('Getting the primes');
+(function () {
 
-        $http.get('file://data/1000.txt')
-          .success(function(data) {
-            console.log('Greaaaat!');
-            deferred.resolve(data);
-          })
-          .error(function() {
-            console.log('Ohhhh no!!!!');
-            deferred.reject();
-          });
-
-        return deferred.promise;
-
-      }
-    }
+  function PrimesService($resource) {
+    return $resource('/api/primes/:quantity',
+      {
+        quantity: '@_quantity'
+      },
+      {
+        get: {
+          method: 'GET',
+          params: {
+            quantity: '@_quantity'
+          }
+        }
+      });
   }
 
-  module.factory('PrimesService', PrimesService)
+  angular.module('abulamApp.primes', [])
+    .factory('PrimesService', PrimesService);
 
-})(angular.module('abulum.primes', []))
+})();

@@ -21,8 +21,7 @@ function handleError(res, statusCode) {
 
 // Gets a list of primes
 export function index(req, res) {
-  primes.getPrimes()
-    .then(respondWithResult(res))
-    .catch(handleError(res));
+  var thePrimesArr = primes.getPrimes();
+  respondWithResult(res, 200)(thePrimesArr);
 }
 
