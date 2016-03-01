@@ -32,6 +32,8 @@
         var directions = [[0,-1], [-1,0], [0,1], [1,0]];
         var currentDirection = 0;
         var counter = 0;
+        var rects = [];
+
 
         for(var charachter of lmayerWord){
           if(charachter==='+'){ //a 90 degree rotation clockwise
@@ -50,6 +52,7 @@
             else{
               if(charachter === 'w'){
                 var rect = paper.rect(originX, originY, squareWidth, squareWidth);
+                rects.push(rect);
                 if(!primes.includes(counter)){
                   rect.attr({
                     opacity: 0.0
@@ -60,6 +63,8 @@
             }
           }
         };
+
+        return rects;
       }
 
 
@@ -80,8 +85,18 @@
       //paper = Snap("#svgempty");
       this.paper = Snap("#svgempty");
       var lmayerWord = this.generateLindenmayerWord(this.primes[this.primes.length-1]);
-      console.log(lmayerWord);
-      this.drawLmayerRects(this.paper, lmayerWord, this.primes, 500, 500, 5);
+      var rects = this.drawLmayerRects(this.paper, lmayerWord, this.primes, 500, 500, 5);
+      var theGroup = this.paper.group();
+      rects.forEach(function(r){
+        theGroup.append(r);
+      })
+      //theGroup.attr({
+      //  opacity: 0.0
+      //});
+      var newGroup = theGroup.clone();
+      newGroup.transform( 'r3, 500,500')
+      //this.paper.append(newGroup);
+      //newGroup.animate({ 'transform' : 'r45,225,225' },4000)
 
     }
 
