@@ -69,12 +69,10 @@
 
 
       $http.get('/api/primes').then(response => {
-        //this.primes = response.data;
         console.log("Response: " + response);
-        socket.socket.on("message", function(msg){
+        socket.socket.on("prime:next", function(msg){
           console.log('prime received: ' + msg);
         });
-        //socket.syncUpdates('primes', this.primes);
       })
         .catch(function (err) {
           console.log('Failed to get primes: ' + err);

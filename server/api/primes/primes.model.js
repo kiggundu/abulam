@@ -15,10 +15,10 @@ var model = function () {
 
     fromJsonFile: function (filePath) {
       const primesJson = require(filePath);
-      //var primesBufferSize = 10;
+      var primesBufferSize = 100;
       var primesStream = Rx.Observable
         .from(primesJson)
-        //.bufferWithCount(primesBufferSize);
+        .bufferWithCount(primesBufferSize);
       return primesStream;
     },
 
@@ -27,6 +27,8 @@ var model = function () {
       var primesObservable = Rx.Observable.create(function(observer){
         var fs = require("fs");
         var source = makeSource();
+        var numbersPerChunk = 100;
+        var numberBlock = [];
         var objectCounter = 0;
         var currentNumber = "";
 
@@ -41,7 +43,14 @@ var model = function () {
 
         source.on("endNumber", function () {
           logger.debug("number is: ", currentNumber);
-          observer.onNext(parseInt(currentNumber));
+          if(objectCounter<numbersPerChunk) {
+            numberBlock.push(parseInt(currentNumber));
+          }
+          else {
+            observer.onNext(numberBlock);
+            numberBlock = [];
+            numberBlock.push(parseInt(currentNumber));
+          }
           currentNumber = "";
         });
 
