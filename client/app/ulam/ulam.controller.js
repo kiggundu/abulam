@@ -4,7 +4,7 @@
 
   class UlamController {
 
-    constructor($http, $scope) {
+    constructor($http, $scope, socket) {
       this.$http = $http;
       this.primes = [];
       this.squareWidth = 5;
@@ -69,8 +69,12 @@
 
 
       $http.get('/api/primes').then(response => {
-        this.primes = response.data;
-        socket.syncUpdates('primes', this.primes);
+        //this.primes = response.data;
+        console.log("Response: " + response);
+        socket.socket.on("message", function(msg){
+          console.log('prime received: ' + msg);
+        });
+        //socket.syncUpdates('primes', this.primes);
       })
         .catch(function (err) {
           console.log('Failed to get primes: ' + err);

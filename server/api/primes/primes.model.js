@@ -11,7 +11,6 @@ logger.setLevel("INFO");
 
 var model = function () {
 
-
   return {
 
     fromJsonFile: function (filePath) {

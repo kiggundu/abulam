@@ -479,9 +479,10 @@ module.exports = function (grunt) {
       },
       unit: {
         src: ['<%= yeoman.server %>/**/*.spec.js']
+        //src: ['<%= yeoman.server %>/**/*.unit.spec.js']
       },
       integration: {
-        src: ['<%= yeoman.server %>/**/*.integration.js']
+        //src: ['<%= yeoman.server %>/**/*.integration.js']
       }
     },
 
